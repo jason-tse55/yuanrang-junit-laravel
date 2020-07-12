@@ -1,28 +1,29 @@
-<h1 align="center"> junit-laravel </h1>
 
-<p align="center"> A simplified version of the laravel framework unit test.</p>
+#  yuanrang/junit-laravel
+
+####这里是对于框架的介绍
 
 
-## Installing
+# 框架的运行环境要求
 
-```shell
-$ composer require yuanrang/junit-laravel -vvv
+Laravel >= 5.1  &&  php >= 7.2.5
+
+
+# 安装方式
+
+```sell
+composer require "yuanrang/junit-laravel"
 ```
 
-## Usage
+#配置方式
 
-TODO
+5.5手动配置laravel 对于junit服务放到config/app.php中
+```php
+Yuanrang\JunitLaravel\Http\Providers\SjunitServiceProvider::class
+```
 
-## Contributing
-
-You can contribute in one of three ways:
-
-1. File bug reports using the [issue tracker](https://github.com/yuanrang/junit-laravel/issues).
-2. Answer questions or fix bugs on the [issue tracker](https://github.com/yuanrang/junit-laravel/issues).
-3. Contribute new features or update the wiki.
-
-_The code contribution process is not very formal. You just need to make sure that you follow the PSR-0, PSR-1, and PSR-2 coding guidelines. Any new code contributions must be accompanied by unit tests where applicable._
-
-## License
-
-MIT
+#解释路由文件
+```php
+Route::get('/', 'SjunitController@index');
+Route::post('/', 'SjunitController@store')->name('sjunit.store');
+```
